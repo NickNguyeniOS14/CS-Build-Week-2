@@ -6,3 +6,12 @@ here as necessary.
 
 For all details about the week, [check out the page in
 TrainingKit](https://learn.lambdaschool.com/cs/sprint/reco0t22NdXmr8VyL).
+
+https://leetcode.com/problems/contains-duplicate/
+
+
+class Solution {
+    func containsDuplicate(_ nums: [Int]) -> Bool {
+     return Set(nums).count != nums.count
+    }
+}
