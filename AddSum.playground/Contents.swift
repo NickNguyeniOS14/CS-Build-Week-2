@@ -30,25 +30,17 @@ func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
   var carry = 0
   
   while first != nil || second != nil {
-    let x = first != nil ? first!.value  : 0
-    let y = second != nil ? second!.value  : 0
-    let sum = carry + x + y
+    let firstNodeValue = first != nil ? first!.value  : 0
+    let secondNodeValue = second != nil ? second!.value  : 0
+    let sum = carry + firstNodeValue + secondNodeValue
     carry = sum / 10
     current?.next = ListNode(sum % 10)
     current = current?.next
-    
-    if first != nil {
-      first = first?.next
-    }
-    
-    if second != nil {
-      second = second?.next
-    }
+    first = first?.next
+    second = second?.next
   }
   
-  if carry > 0 {
-    current?.next = ListNode(carry)
-  }
+  current?.next = carry > 0 ? ListNode(carry) : nil
   
   return dummyHead?.next
 }
