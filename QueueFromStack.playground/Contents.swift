@@ -27,15 +27,13 @@ class MyQueue {
   func empty() -> Bool {
     return input.isEmpty && output.isEmpty
   }
-  
-  
 }
 
-
-// Your MyQueue object will be instantiated and called as such:
 let obj = MyQueue()
+obj.push(1)
 obj.push(2)
 obj.push(3)
+obj.push(4)
 let ret_3 = obj.peek()
 let ret_4 = obj.empty()
 
