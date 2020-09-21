@@ -12,3 +12,12 @@ func recreatePow(first: Int, second: Int) -> Int {
 
 recreatePow(first: 4, second: 3)
 recreatePow(first: 2, second: 8)
+
+
+func recursivePow(number: Int, power: Int) -> Int {
+  guard number > 0, power > 0 else { return 0 }
+  if power == 1 { return number }
+  return number * recursivePow(number: number, power: power - 1)
+}
+
+recursivePow(number: 3, power: 3)
