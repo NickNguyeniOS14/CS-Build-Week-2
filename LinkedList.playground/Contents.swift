@@ -22,6 +22,23 @@ class LinkedList<T> {
     }
 }
 
+extension LinkedList {
+    var centerNode: Node<T>? {
+        var slow = head
+        var fast = head
+
+        while fast != nil && fast?.next != nil {
+            slow = slow?.next
+            fast = fast?.next?.next
+        }
+
+        return slow
+    }
+
+
+}
+
+
 var list = LinkedList<Character>()
 var previousNode: Node<Character>? = nil
 
@@ -36,3 +53,5 @@ for letter in "abcdefghijklmnopqrstuvwxyz" {
 }
 list.printNodes()
 
+let c = list.centerNode
+c?.value
